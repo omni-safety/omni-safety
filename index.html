@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>安全萬事屋有限公司 | Omni Safety Limited</title>
+  <meta name="description" content="安全萬事屋有限公司 Omni Safety Limited 提供安全顧問服務、安全稽核及審核、風險評估/管理、工作環境安全審查、意外調查及安全用品批發。" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", "Noto Sans TC", Arial, sans-serif;
+      background: #07111f;
+      color: #fff;
+      line-height: 1.7;
+    }
+    a { color: inherit; text-decoration: none; }
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(16px);
+      background: rgba(7, 17, 31, 0.82);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav-inner {
+      max-width: 1180px;
+      margin: auto;
+      padding: 16px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; }
+    .logo {
+      width: 42px; height: 42px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #34d399, #22d3ee);
+      display: grid; place-items: center;
+      color: #06111f;
+      font-weight: 900;
+      box-shadow: 0 12px 32px rgba(34, 211, 238, 0.22);
+    }
+    .brand small { display: block; color: #9fb0c4; font-weight: 500; margin-top: -2px; }
+    .nav-links { display: flex; gap: 22px; color: #c8d4e2; font-size: 15px; }
+    .nav-links a:hover { color: #6ee7b7; }
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(circle at 10% 10%, rgba(52,211,153,0.25), transparent 32%),
+                  radial-gradient(circle at 90% 30%, rgba(34,211,238,0.2), transparent 35%),
+                  linear-gradient(135deg, #07111f, #0f1b2d 55%, #052e2b);
+    }
+    .hero-inner {
+      max-width: 1180px;
+      margin: auto;
+      padding: 92px 22px 86px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .badge {
+      display: inline-flex;
+      padding: 8px 14px;
+      border: 1px solid rgba(110,231,183,0.35);
+      background: rgba(16,185,129,0.1);
+      color: #a7f3d0;
+      border-radius: 999px;
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+    h1 { font-size: clamp(40px, 6vw, 68px); line-height: 1.1; letter-spacing: -1.8px; }
+    .gradient-text {
+      display: block;
+      background: linear-gradient(90deg, #6ee7b7, #67e8f9);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .hero p { margin-top: 24px; color: #cbd5e1; font-size: 18px; max-width: 680px; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 34px; }
+    .btn {
+      padding: 13px 22px;
+      border-radius: 18px;
+      font-weight: 800;
+      transition: .25s ease;
+      display: inline-block;
+    }
+    .btn-primary { background: #34d399; color: #06111f; box-shadow: 0 12px 30px rgba(52,211,153,0.22); }
+    .btn-secondary { border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.06); color: white; }
+    .btn:hover { transform: translateY(-2px); }
+    .hero-card-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .mini-card {
+      padding: 24px;
+      min-height: 132px;
+      border-radius: 28px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(18px);
+    }
+    .mini-card .tick { font-size: 24px; margin-bottom: 10px; }
+    .mini-card strong { font-size: 18px; }
+    section { max-width: 1180px; margin: auto; padding: 76px 22px; }
+    .section-label { color: #6ee7b7; text-transform: uppercase; letter-spacing: 3px; font-size: 13px; font-weight: 900; }
+    h2 { margin-top: 10px; font-size: clamp(30px, 4vw, 44px); line-height: 1.2; }
+    .section-intro { margin-top: 14px; color: #b7c4d6; max-width: 720px; }
+    .services-grid { margin-top: 38px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .service-card {
+      border-radius: 30px;
+      padding: 28px;
+      background: rgba(15, 27, 45, 0.9);
+      border: 1px solid rgba(255,255,255,0.09);
+      box-shadow: 0 20px 50px rgba(0,0,0,.15);
+      transition: .25s ease;
+    }
+    .service-card:hover { transform: translateY(-5px); border-color: rgba(52,211,153,.45); }
+    .service-icon { font-size: 40px; margin-bottom: 18px; }
+    .service-card h3 { font-size: 21px; margin-bottom: 10px; }
+    .service-card p { color: #bdc8d8; }
+    .why-wrap {
+      max-width: none;
+      background: rgba(255,255,255,0.035);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .why-inner {
+      max-width: 1180px;
+      margin: auto;
+      padding: 76px 22px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 44px;
+      align-items: start;
+    }
+    .why-text p { color: #c8d4e2; margin-top: 16px; }
+    .adv-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
+    .adv {
+      border-radius: 26px;
+      padding: 24px;
+      background: #0f1b2d;
+      border: 1px solid rgba(255,255,255,0.09);
+    }
+    .adv span { color: #6ee7b7; font-size: 13px; }
+    .adv strong { display:block; margin-top: 6px; font-size: 20px; }
+    .contact-box {
+      border-radius: 36px;
+      padding: 42px;
+      background: linear-gradient(135deg, rgba(16,185,129,.14), rgba(34,211,238,.12));
+      border: 1px solid rgba(110,231,183,.24);
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 30px;
+      align-items: center;
+    }
+    .contact-info {
+      border-radius: 28px;
+      padding: 26px;
+      background: rgba(7,17,31,.55);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .contact-item { margin-bottom: 18px; }
+    .contact-item:last-child { margin-bottom: 0; }
+    .contact-item span { color: #93a4b8; font-size: 14px; }
+    .contact-item strong { display: block; font-size: 18px; margin-top: 3px; }
+    footer {
+      padding: 28px 20px;
+      text-align: center;
+      color: #91a0b4;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    @media (max-width: 880px) {
+      .hero-inner, .why-inner, .contact-box { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 560px) {
+      .hero-inner { padding-top: 62px; }
+      .services-grid, .hero-card-grid, .adv-grid { grid-template-columns: 1fr; }
+      .contact-box { padding: 28px; }
+      .brand div:last-child { font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#top" aria-label="Omni Safety Limited home">
+        <div class="logo">OS</div>
+        <div>
+          安全萬事屋有限公司
+          <small>Omni Safety Limited</small>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="#services">服務範圍</a>
+        <a href="#why">為何選擇我們</a>
+        <a href="#contact">聯絡我們</a>
+      </div>
+    </div>
+  </nav>
+
+  <header id="top" class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="badge">安全萬事屋有限公司 Omni Safety Limited</div>
+        <h1>
+          一站式安全顧問服務
+          <span class="gradient-text">提升安全管理水平</span>
+        </h1>
+        <p>
+          我們提供安全顧問、稽核及審核、風險評估 / 管理、工作環境安全審查、意外調查及安全用品批發服務，協助客戶建立更安全、更合規、更高效的工作環境。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#services">查看服務</a>
+          <a class="btn btn-secondary" href="#contact">立即查詢</a>
+        </div>
+      </div>
+      <div class="hero-card-grid" aria-label="公司優勢">
+        <div class="mini-card"><div class="tick">✔️</div><strong>專業顧問團隊</strong></div>
+        <div class="mini-card"><div class="tick">✔️</div><strong>切合工程及企業需要</strong></div>
+        <div class="mini-card"><div class="tick">✔️</div><strong>協助符合法例及標準</strong></div>
+        <div class="mini-card"><div class="tick">✔️</div><strong>實地評估及改善建議</strong></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="services">
+      <div class="section-label">Our Services</div>
+      <h2>核心服務範圍</h2>
+      <p class="section-intro">按照不同行業、工程類別及工作環境需要，提供度身訂造及實用的安全管理方案。</p>
+      <div class="services-grid">
+        <article class="service-card"><div class="service-icon">🦺</div><h3>安全顧問服務</h3><p>為建築地盤、工程項目及企業提供全面安全管理建議，協助建立符合法例及實務要求的安全制度。</p></article>
+        <article class="service-card"><div class="service-icon">📋</div><h3>安全稽核及審核</h3><p>按照項目需要進行定期安全稽核及獨立審核，找出潛在缺失，提升整體安全表現及合規水平。</p></article>
+        <article class="service-card"><div class="service-icon">⚠️</div><h3>風險評估 / 管理</h3><p>針對高風險工序、工作流程及日常運作進行風險評估，制定可行控制措施及改善方案。</p></article>
+        <article class="service-card"><div class="service-icon">🏗️</div><h3>工作環境安全審查</h3><p>就施工現場、辦公場所、工場及作業環境進行安全巡查，評估工作環境是否符合安全及衛生要求。</p></article>
+        <article class="service-card"><div class="service-icon">🔍</div><h3>意外調查 / 預防意外</h3><p>分析事故成因、檢視管理漏洞，提出預防措施及改善建議，協助減少類似事故再次發生。</p></article>
+        <article class="service-card"><div class="service-icon">🧤</div><h3>安全用品批發</h3><p>提供各類工地及工業用途安全用品批發，包括個人防護裝備、警示用品及現場安全設施。</p></article>
+      </div>
+    </section>
+
+    <div id="why" class="why-wrap">
+      <div class="why-inner">
+        <div class="why-text">
+          <div class="section-label">Why Choose Us</div>
+          <h2>為何選擇我們</h2>
+          <p>我們重視現場實況，並以專業、務實及符合法規的角度，為客戶提供有效改善建議。</p>
+          <p>無論是工程項目、工廠、辦公室或企業營運環境，我們都能提供針對性的安全管理支援。</p>
+          <p>由前期風險識別，到後續稽核審核及事故預防，我們協助客戶建立可持續的安全文化。</p>
+        </div>
+        <div class="adv-grid">
+          <div class="adv"><span>重點優勢</span><strong>符合法規要求</strong></div>
+          <div class="adv"><span>重點優勢</span><strong>提升安全表現</strong></div>
+          <div class="adv"><span>重點優勢</span><strong>降低意外風險</strong></div>
+          <div class="adv"><span>重點優勢</span><strong>建立安全文化</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <section id="contact">
+      <div class="contact-box">
+        <div>
+          <div class="section-label">Contact Us</div>
+          <h2>歡迎查詢及合作</h2>
+          <p class="section-intro">如需了解更多安全顧問服務、預約安全評估，或查詢安全用品批發，歡迎隨時與我們聯絡。</p>
+        </div>
+        <div class="contact-info">
+          <div class="contact-item"><span>公司名稱</span><strong>安全萬事屋有限公司<br>Omni Safety Limited</strong></div>
+          <div class="contact-item"><span>電話 / WhatsApp</span><strong>+852 6488 4604</strong></div>
+          <div class="contact-item"><span>電郵</span><strong>info@omnisafety.com</strong></div>
+          <div class="contact-item"><span>服務地區</span><strong>香港</strong></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2026 安全萬事屋有限公司 Omni Safety Limited. All rights reserved.</footer>
+</body>
+</html>
