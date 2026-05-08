@@ -4,277 +4,1145 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>安全萬事屋有限公司 | Omni Safety Limited</title>
-  <meta name="description" content="安全萬事屋有限公司 Omni Safety Limited 提供安全顧問服務、安全稽核及審核、風險評估/管理、工作環境安全審查、意外調查及安全用品批發。" />
+  <meta name="description" content="安全萬事屋有限公司 Omni Safety Limited 提供安全顧問服務、安全稽核及審核、風險評估、工作環境安全審查、意外調查及安全用品批發。" />
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    :root {
+      --green-950: #062016;
+      --green-900: #08291c;
+      --green-800: #0d3a28;
+      --green-700: #115235;
+      --green-500: #3f8f3f;
+      --lime: #95c83d;
+      --yellow: #ffd84d;
+      --yellow-dark: #e8b900;
+      --white: #ffffff;
+      --off-white: #f6f8f3;
+      --text: #1d2a22;
+      --muted: #637069;
+      --border: #e4e9df;
+      --shadow: 0 18px 45px rgba(9, 31, 21, 0.12);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", "Noto Sans TC", Arial, sans-serif;
-      background: #07111f;
-      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif;
+      color: var(--text);
+      background: var(--white);
       line-height: 1.7;
     }
-    a { color: inherit; text-decoration: none; }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: var(--green-950);
+      color: rgba(255,255,255,0.88);
+      font-size: 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 9px 0;
+    }
+
+    .topbar-left,
+    .topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .topbar span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .topbar .dot {
+      color: var(--yellow);
+      font-size: 13px;
+    }
+
     .nav {
       position: sticky;
       top: 0;
-      z-index: 20;
-      backdrop-filter: blur(16px);
-      background: rgba(7, 17, 31, 0.82);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      z-index: 50;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
     }
+
     .nav-inner {
-      max-width: 1180px;
-      margin: auto;
-      padding: 16px 22px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      padding: 16px 0;
+      gap: 22px;
     }
-    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; }
-    .logo {
-      width: 42px; height: 42px;
-      border-radius: 14px;
-      background: linear-gradient(135deg, #34d399, #22d3ee);
-      display: grid; place-items: center;
-      color: #06111f;
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 250px;
+    }
+
+    .logo-mark {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, var(--green-950), var(--green-700));
+      display: grid;
+      place-items: center;
+      color: var(--yellow);
       font-weight: 900;
-      box-shadow: 0 12px 32px rgba(34, 211, 238, 0.22);
+      font-size: 25px;
+      border: 3px solid rgba(255,216,77,0.7);
+      box-shadow: 0 8px 20px rgba(8,41,28,0.22);
     }
-    .brand small { display: block; color: #9fb0c4; font-weight: 500; margin-top: -2px; }
-    .nav-links { display: flex; gap: 22px; color: #c8d4e2; font-size: 15px; }
-    .nav-links a:hover { color: #6ee7b7; }
+
+    .brand h1 {
+      font-size: 21px;
+      line-height: 1.12;
+      letter-spacing: 0.02em;
+      color: #101a14;
+    }
+
+    .brand small {
+      display: block;
+      color: var(--green-800);
+      font-weight: 700;
+      margin-top: 3px;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-weight: 700;
+      color: #1d2a22;
+      font-size: 15px;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding: 9px 0;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 3px;
+      background: var(--lime);
+      border-radius: 999px;
+      transition: width 0.25s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--yellow);
+      color: #172016;
+      padding: 11px 18px;
+      border-radius: 9px;
+      font-weight: 900;
+      box-shadow: 0 8px 18px rgba(255,216,77,0.28);
+      white-space: nowrap;
+    }
+
+    .mobile-menu {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: white;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+    }
+
     .hero {
+      min-height: 620px;
+      color: white;
       position: relative;
       overflow: hidden;
-      background: radial-gradient(circle at 10% 10%, rgba(52,211,153,0.25), transparent 32%),
-                  radial-gradient(circle at 90% 30%, rgba(34,211,238,0.2), transparent 35%),
-                  linear-gradient(135deg, #07111f, #0f1b2d 55%, #052e2b);
+      background:
+        linear-gradient(90deg, rgba(6,32,22,0.94) 0%, rgba(6,32,22,0.82) 42%, rgba(6,32,22,0.42) 100%),
+        url("https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat;
     }
-    .hero-inner {
-      max-width: 1180px;
-      margin: auto;
-      padding: 92px 22px 86px;
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 15% 20%, rgba(255,216,77,0.18), transparent 28%), linear-gradient(180deg, transparent 70%, rgba(6,32,22,0.25));
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 112px 0 120px;
+      max-width: 740px;
+    }
+
+    .eyebrow {
+      color: var(--yellow);
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      margin-bottom: 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 40px;
+      height: 3px;
+      border-radius: 999px;
+      background: var(--yellow);
+    }
+
+    .hero h2 {
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 1.08;
+      letter-spacing: -0.05em;
+      margin-bottom: 22px;
+      font-weight: 950;
+    }
+
+    .hero h2 span {
+      color: var(--lime);
+    }
+
+    .hero p {
+      font-size: 19px;
+      color: rgba(255,255,255,0.9);
+      max-width: 650px;
+      margin-bottom: 34px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 26px;
+      border-radius: 8px;
+      font-weight: 900;
+      border: 1px solid transparent;
+      transition: 0.25s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--yellow);
+      color: #172016;
+      box-shadow: 0 12px 26px rgba(255,216,77,0.28);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: #ffe36f;
+    }
+
+    .btn-outline {
+      border-color: rgba(255,255,255,0.55);
+      color: white;
+      background: rgba(255,255,255,0.04);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.14);
+      transform: translateY(-2px);
+    }
+
+    .section {
+      padding: 82px 0;
+    }
+
+    .section-light {
+      background: linear-gradient(180deg, #ffffff 0%, #f8faf6 100%);
+    }
+
+    .section-title {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 42px;
+    }
+
+    .section-title .ghost {
+      display: block;
+      color: rgba(9,31,21,0.06);
+      font-size: 46px;
+      line-height: 0.6;
+      font-weight: 950;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .section-title h2 {
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.2;
+      margin-bottom: 14px;
+      font-weight: 950;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .services-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 48px;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 16px;
+    }
+
+    .service-card {
+      grid-column: span 2;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 30px 24px;
+      box-shadow: 0 10px 28px rgba(9,31,21,0.08);
+      transition: 0.25s ease;
+      min-height: 285px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow);
+      border-color: rgba(63,143,63,0.35);
+    }
+
+    .service-icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 18px;
+      background: #f0f7e8;
+      display: grid;
+      place-items: center;
+      font-size: 35px;
+      margin-bottom: 18px;
+      border: 1px solid #dbeacf;
+    }
+
+    .service-card:nth-child(2) .service-icon { background: #eef5eb; }
+    .service-card:nth-child(3) .service-icon { background: #fff7d8; }
+    .service-card:nth-child(4) .service-icon { background: #edf8ee; }
+    .service-card:nth-child(5) .service-icon { background: #eef9f6; }
+    .service-card:nth-child(6) .service-icon { background: #f7eefb; }
+
+    .service-card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: var(--green-900);
+      font-weight: 950;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 15.5px;
+      flex: 1;
+    }
+
+    .learn-more {
+      margin-top: 22px;
+      color: var(--green-800);
+      font-weight: 900;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .stats {
+      background:
+        linear-gradient(90deg, rgba(6,32,22,0.96) 0%, rgba(6,32,22,0.88) 46%, rgba(6,32,22,0.3) 100%),
+        url("https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat;
+      color: white;
+      padding: 64px 0;
+    }
+
+    .stats-inner {
+      display: grid;
+      grid-template-columns: 1.1fr 2fr;
+      gap: 44px;
       align-items: center;
     }
-    .badge {
-      display: inline-flex;
-      padding: 8px 14px;
-      border: 1px solid rgba(110,231,183,0.35);
-      background: rgba(16,185,129,0.1);
-      color: #a7f3d0;
-      border-radius: 999px;
-      font-size: 14px;
-      margin-bottom: 22px;
+
+    .stats h2 {
+      font-size: 31px;
+      line-height: 1.25;
+      font-weight: 950;
     }
-    h1 { font-size: clamp(40px, 6vw, 68px); line-height: 1.1; letter-spacing: -1.8px; }
-    .gradient-text {
-      display: block;
-      background: linear-gradient(90deg, #6ee7b7, #67e8f9);
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-    .hero p { margin-top: 24px; color: #cbd5e1; font-size: 18px; max-width: 680px; }
-    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 34px; }
-    .btn {
-      padding: 13px 22px;
-      border-radius: 18px;
-      font-weight: 800;
-      transition: .25s ease;
-      display: inline-block;
-    }
-    .btn-primary { background: #34d399; color: #06111f; box-shadow: 0 12px 30px rgba(52,211,153,0.22); }
-    .btn-secondary { border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.06); color: white; }
-    .btn:hover { transform: translateY(-2px); }
-    .hero-card-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-    .mini-card {
-      padding: 24px;
-      min-height: 132px;
-      border-radius: 28px;
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.1);
-      backdrop-filter: blur(18px);
-    }
-    .mini-card .tick { font-size: 24px; margin-bottom: 10px; }
-    .mini-card strong { font-size: 18px; }
-    section { max-width: 1180px; margin: auto; padding: 76px 22px; }
-    .section-label { color: #6ee7b7; text-transform: uppercase; letter-spacing: 3px; font-size: 13px; font-weight: 900; }
-    h2 { margin-top: 10px; font-size: clamp(30px, 4vw, 44px); line-height: 1.2; }
-    .section-intro { margin-top: 14px; color: #b7c4d6; max-width: 720px; }
-    .services-grid { margin-top: 38px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .service-card {
-      border-radius: 30px;
-      padding: 28px;
-      background: rgba(15, 27, 45, 0.9);
-      border: 1px solid rgba(255,255,255,0.09);
-      box-shadow: 0 20px 50px rgba(0,0,0,.15);
-      transition: .25s ease;
-    }
-    .service-card:hover { transform: translateY(-5px); border-color: rgba(52,211,153,.45); }
-    .service-icon { font-size: 40px; margin-bottom: 18px; }
-    .service-card h3 { font-size: 21px; margin-bottom: 10px; }
-    .service-card p { color: #bdc8d8; }
-    .why-wrap {
-      max-width: none;
-      background: rgba(255,255,255,0.035);
-      border-top: 1px solid rgba(255,255,255,0.08);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-    .why-inner {
-      max-width: 1180px;
-      margin: auto;
-      padding: 76px 22px;
+
+    .stats-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 44px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .stat-item {
+      border-left: 1px solid rgba(255,255,255,0.22);
+      padding-left: 24px;
+    }
+
+    .stat-icon {
+      color: var(--yellow);
+      font-size: 27px;
+      margin-bottom: 10px;
+    }
+
+    .stat-number {
+      display: block;
+      font-size: 38px;
+      line-height: 1;
+      font-weight: 950;
+      color: white;
+    }
+
+    .stat-label {
+      color: rgba(255,255,255,0.76);
+      margin-top: 8px;
+      font-size: 14px;
+    }
+
+    .why-wrap {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 54px;
+      align-items: center;
+    }
+
+    .why-text .side-line {
+      width: 42px;
+      height: 4px;
+      background: var(--lime);
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+
+    .why-text h2 {
+      font-size: clamp(30px, 4vw, 42px);
+      line-height: 1.2;
+      margin-bottom: 14px;
+      font-weight: 950;
+    }
+
+    .why-text > p {
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .why-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .why-item {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 14px;
       align-items: start;
     }
-    .why-text p { color: #c8d4e2; margin-top: 16px; }
-    .adv-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
-    .adv {
-      border-radius: 26px;
-      padding: 24px;
-      background: #0f1b2d;
-      border: 1px solid rgba(255,255,255,0.09);
-    }
-    .adv span { color: #6ee7b7; font-size: 13px; }
-    .adv strong { display:block; margin-top: 6px; font-size: 20px; }
-    .contact-box {
-      border-radius: 36px;
-      padding: 42px;
-      background: linear-gradient(135deg, rgba(16,185,129,.14), rgba(34,211,238,.12));
-      border: 1px solid rgba(110,231,183,.24);
+
+    .why-item .tick {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
       display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 30px;
-      align-items: center;
+      place-items: center;
+      color: var(--green-800);
+      background: #eef7e8;
+      font-weight: 950;
+      border: 1px solid #d9ead0;
     }
-    .contact-info {
-      border-radius: 28px;
+
+    .why-item h3 {
+      font-size: 17px;
+      color: var(--green-900);
+      font-weight: 950;
+    }
+
+    .why-item p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .image-card {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      min-height: 420px;
+      background:
+        linear-gradient(180deg, rgba(6,32,22,0.05), rgba(6,32,22,0.08)),
+        url("https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1400&q=80") center/cover no-repeat;
+    }
+
+    .quote-box {
+      position: absolute;
+      right: 22px;
+      bottom: 22px;
+      width: min(380px, calc(100% - 44px));
+      background: var(--green-950);
+      color: white;
+      border-radius: 12px;
       padding: 26px;
-      background: rgba(7,17,31,.55);
-      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 15px 38px rgba(0,0,0,0.25);
     }
-    .contact-item { margin-bottom: 18px; }
-    .contact-item:last-child { margin-bottom: 0; }
-    .contact-item span { color: #93a4b8; font-size: 14px; }
-    .contact-item strong { display: block; font-size: 18px; margin-top: 3px; }
-    footer {
-      padding: 28px 20px;
+
+    .quote-box h3 {
+      font-size: 23px;
+      margin-bottom: 8px;
+    }
+
+    .quote-box p {
+      color: rgba(255,255,255,0.76);
+      margin-bottom: 18px;
+    }
+
+    .industries {
+      background: var(--off-white);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .industry-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+
+    .industry-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px 18px;
       text-align: center;
-      color: #91a0b4;
-      border-top: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 8px 20px rgba(9,31,21,0.05);
+      font-weight: 900;
+      color: var(--green-900);
     }
-    @media (max-width: 880px) {
-      .hero-inner, .why-inner, .contact-box { grid-template-columns: 1fr; }
-      .services-grid { grid-template-columns: 1fr 1fr; }
-      .nav-links { display: none; }
+
+    .industry-card span {
+      display: block;
+      font-size: 34px;
+      margin-bottom: 10px;
     }
-    @media (max-width: 560px) {
-      .hero-inner { padding-top: 62px; }
-      .services-grid, .hero-card-grid, .adv-grid { grid-template-columns: 1fr; }
-      .contact-box { padding: 28px; }
-      .brand div:last-child { font-size: 14px; }
+
+    .contact {
+      background:
+        linear-gradient(90deg, rgba(6,32,22,0.95), rgba(8,41,28,0.95)),
+        url("https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat;
+      color: white;
+    }
+
+    .contact-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      align-items: start;
+    }
+
+    .contact h2 {
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.16;
+      margin-bottom: 16px;
+      font-weight: 950;
+    }
+
+    .contact p {
+      color: rgba(255,255,255,0.78);
+      margin-bottom: 28px;
+    }
+
+    .contact-info {
+      display: grid;
+      gap: 15px;
+      margin-top: 26px;
+    }
+
+    .contact-info div {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .form {
+      background: white;
+      color: var(--text);
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.18);
+    }
+
+    .form h3 {
+      color: var(--green-900);
+      font-size: 24px;
+      margin-bottom: 18px;
+      font-weight: 950;
+    }
+
+    .form-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .form input,
+    .form select,
+    .form textarea {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      padding: 13px 14px;
+      font: inherit;
+      color: var(--text);
+      background: #fbfcfa;
+      outline: none;
+    }
+
+    .form textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form input:focus,
+    .form select:focus,
+    .form textarea:focus {
+      border-color: var(--green-500);
+      box-shadow: 0 0 0 4px rgba(63,143,63,0.12);
+    }
+
+    .form button {
+      border: 0;
+      width: 100%;
+      margin-top: 4px;
+    }
+
+    footer {
+      background: var(--green-950);
+      color: rgba(255,255,255,0.78);
+      padding: 52px 0 22px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr 1.1fr;
+      gap: 32px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      margin-bottom: 14px;
+    }
+
+    .footer-brand h3 {
+      color: white;
+      line-height: 1.15;
+      font-size: 19px;
+    }
+
+    .footer-brand small {
+      color: var(--yellow);
+      display: block;
+      margin-top: 3px;
+    }
+
+    footer h4 {
+      color: white;
+      margin-bottom: 14px;
+      font-size: 18px;
+    }
+
+    footer ul {
+      list-style: none;
+      display: grid;
+      gap: 9px;
+    }
+
+    footer li::before {
+      content: "•";
+      color: var(--yellow);
+      margin-right: 8px;
+    }
+
+    .copyright {
+      padding-top: 22px;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 14px;
+      color: rgba(255,255,255,0.62);
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #25d366;
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 28px;
+      font-weight: 900;
+      box-shadow: 0 12px 30px rgba(37,211,102,0.35);
+      z-index: 80;
+      border: 3px solid white;
+    }
+
+    @media (max-width: 1024px) {
+      .nav-links,
+      .nav-cta {
+        display: none;
+      }
+      .mobile-menu {
+        display: flex;
+      }
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .service-card {
+        grid-column: span 1;
+      }
+      .stats-inner,
+      .why-wrap,
+      .contact-card,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .industry-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        width: min(100% - 28px, 1180px);
+      }
+      .topbar-inner,
+      .topbar-left,
+      .topbar-right {
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+      .topbar-right {
+        display: none;
+      }
+      .brand {
+        min-width: auto;
+      }
+      .brand h1 {
+        font-size: 17px;
+      }
+      .logo-mark {
+        width: 46px;
+        height: 46px;
+        font-size: 21px;
+      }
+      .hero {
+        min-height: auto;
+      }
+      .hero-content {
+        padding: 78px 0 84px;
+      }
+      .hero p {
+        font-size: 17px;
+      }
+      .services-grid,
+      .stats-grid,
+      .industry-grid {
+        grid-template-columns: 1fr;
+      }
+      .stats-grid {
+        gap: 26px;
+      }
+      .stat-item {
+        border-left: 0;
+        border-top: 1px solid rgba(255,255,255,0.16);
+        padding-left: 0;
+        padding-top: 18px;
+      }
+      .section {
+        padding: 62px 0;
+      }
+      .section-title .ghost {
+        font-size: 34px;
+      }
+      .image-card {
+        min-height: 360px;
+      }
+      .quote-box {
+        position: absolute;
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+        width: auto;
+        padding: 20px;
+      }
+      .form {
+        padding: 22px;
+      }
     }
   </style>
 </head>
 <body>
-  <nav class="nav">
-    <div class="nav-inner">
-      <a class="brand" href="#top" aria-label="Omni Safety Limited home">
-        <div class="logo">OS</div>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-left">
+        <span><b class="dot">✉</b> info@omnisafety.com.hk</span>
+        <span><b class="dot">☎</b> +852 1234 5678</span>
+      </div>
+      <div class="topbar-right">
+        <span><b class="dot">◷</b> 星期一至星期五 09:00 - 18:00</span>
+        <span><b class="dot">●</b> 香港專業安全顧問服務</span>
+      </div>
+    </div>
+  </div>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="#home" class="brand" aria-label="Omni Safety Limited Home">
+        <div class="logo-mark">安</div>
         <div>
-          安全萬事屋有限公司
+          <h1>安全萬事屋有限公司</h1>
           <small>Omni Safety Limited</small>
         </div>
       </a>
-      <div class="nav-links">
-        <a href="#services">服務範圍</a>
-        <a href="#why">為何選擇我們</a>
-        <a href="#contact">聯絡我們</a>
-      </div>
-    </div>
-  </nav>
 
-  <header id="top" class="hero">
-    <div class="hero-inner">
-      <div>
-        <div class="badge">安全萬事屋有限公司 Omni Safety Limited</div>
-        <h1>
-          一站式安全顧問服務
-          <span class="gradient-text">提升安全管理水平</span>
-        </h1>
-        <p>
-          我們提供安全顧問、稽核及審核、風險評估 / 管理、工作環境安全審查、意外調查及安全用品批發服務，協助客戶建立更安全、更合規、更高效的工作環境。
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#services">查看服務</a>
-          <a class="btn btn-secondary" href="#contact">立即查詢</a>
-        </div>
-      </div>
-      <div class="hero-card-grid" aria-label="公司優勢">
-        <div class="mini-card"><div class="tick">✔️</div><strong>專業顧問團隊</strong></div>
-        <div class="mini-card"><div class="tick">✔️</div><strong>切合工程及企業需要</strong></div>
-        <div class="mini-card"><div class="tick">✔️</div><strong>協助符合法例及標準</strong></div>
-        <div class="mini-card"><div class="tick">✔️</div><strong>實地評估及改善建議</strong></div>
-      </div>
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="#home">首頁</a>
+        <a href="#services">服務範圍</a>
+        <a href="#why">關於我們</a>
+        <a href="#industries">行業方案</a>
+        <a href="#contact">聯絡我們</a>
+      </nav>
+
+      <a class="nav-cta" href="#contact">免費諮詢 →</a>
+      <button class="mobile-menu" type="button" aria-label="menu">☰</button>
     </div>
   </header>
 
-  <main>
-    <section id="services">
-      <div class="section-label">Our Services</div>
-      <h2>核心服務範圍</h2>
-      <p class="section-intro">按照不同行業、工程類別及工作環境需要，提供度身訂造及實用的安全管理方案。</p>
-      <div class="services-grid">
-        <article class="service-card"><div class="service-icon">🦺</div><h3>安全顧問服務</h3><p>為建築地盤、工程項目及企業提供全面安全管理建議，協助建立符合法例及實務要求的安全制度。</p></article>
-        <article class="service-card"><div class="service-icon">📋</div><h3>安全稽核及審核</h3><p>按照項目需要進行定期安全稽核及獨立審核，找出潛在缺失，提升整體安全表現及合規水平。</p></article>
-        <article class="service-card"><div class="service-icon">⚠️</div><h3>風險評估 / 管理</h3><p>針對高風險工序、工作流程及日常運作進行風險評估，制定可行控制措施及改善方案。</p></article>
-        <article class="service-card"><div class="service-icon">🏗️</div><h3>工作環境安全審查</h3><p>就施工現場、辦公場所、工場及作業環境進行安全巡查，評估工作環境是否符合安全及衛生要求。</p></article>
-        <article class="service-card"><div class="service-icon">🔍</div><h3>意外調查 / 預防意外</h3><p>分析事故成因、檢視管理漏洞，提出預防措施及改善建議，協助減少類似事故再次發生。</p></article>
-        <article class="service-card"><div class="service-icon">🧤</div><h3>安全用品批發</h3><p>提供各類工地及工業用途安全用品批發，包括個人防護裝備、警示用品及現場安全設施。</p></article>
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="eyebrow">專業 · 誠信 · 安全</div>
+        <h2>打造<span>更安全</span>的工作環境</h2>
+        <p>
+          安全萬事屋有限公司為建築工程、工商業及不同工作場所提供全面安全顧問服務，
+          協助企業符合法規要求、識別風險、預防意外，建立可持續的安全文化。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#services">了解我們的服務 →</a>
+          <a class="btn btn-outline" href="#contact">聯絡我們</a>
+        </div>
       </div>
     </section>
 
-    <div id="why" class="why-wrap">
-      <div class="why-inner">
-        <div class="why-text">
-          <div class="section-label">Why Choose Us</div>
-          <h2>為何選擇我們</h2>
-          <p>我們重視現場實況，並以專業、務實及符合法規的角度，為客戶提供有效改善建議。</p>
-          <p>無論是工程項目、工廠、辦公室或企業營運環境，我們都能提供針對性的安全管理支援。</p>
-          <p>由前期風險識別，到後續稽核審核及事故預防，我們協助客戶建立可持續的安全文化。</p>
+    <section id="services" class="section section-light">
+      <div class="container">
+        <div class="section-title">
+          <span class="ghost">OUR SERVICES</span>
+          <h2>我們的服務</h2>
+          <p>提供一站式安全解決方案，協助企業建立高效、安全、合規的工作環境。</p>
         </div>
-        <div class="adv-grid">
-          <div class="adv"><span>重點優勢</span><strong>符合法規要求</strong></div>
-          <div class="adv"><span>重點優勢</span><strong>提升安全表現</strong></div>
-          <div class="adv"><span>重點優勢</span><strong>降低意外風險</strong></div>
-          <div class="adv"><span>重點優勢</span><strong>建立安全文化</strong></div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-icon">🦺</div>
+            <h3>安全顧問服務</h3>
+            <p>為企業、工程項目及承建商提供專業安全管理建議，協助建立符合法例及實務要求的安全制度。</p>
+            <a class="learn-more" href="#contact">了解更多 →</a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">📋</div>
+            <h3>安全稽核及審核</h3>
+            <p>按項目需要進行安全稽核及獨立審核，識別潛在缺失，提出改善方案，提升安全表現及合規水平。</p>
+            <a class="learn-more" href="#contact">了解更多 →</a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">⚠️</div>
+            <h3>風險評估 / 管理</h3>
+            <p>針對高風險工序、工作流程及日常運作進行風險評估，制定切實可行的控制措施及管理方案。</p>
+            <a class="learn-more" href="#contact">了解更多 →</a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">🏗️</div>
+            <h3>工作環境安全審查</h3>
+            <p>就施工現場、辦公場所、工場及作業環境進行安全審查，評估工作場所是否符合安全及衛生要求。</p>
+            <a class="learn-more" href="#contact">了解更多 →</a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">🔍</div>
+            <h3>意外調查 / 預防意外</h3>
+            <p>分析事故成因及管理漏洞，提出預防措施及改善建議，協助減少類似事故再次發生。</p>
+            <a class="learn-more" href="#contact">了解更多 →</a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">🧤</div>
+            <h3>安全用品批發</h3>
+            <p>提供各類工地及工業用途安全用品批發，包括個人防護裝備、警示用品及現場安全設施。</p>
+            <a class="learn-more" href="#contact">了解更多 →</a>
+          </article>
         </div>
       </div>
-    </div>
+    </section>
 
-    <section id="contact">
-      <div class="contact-box">
+    <section class="stats" aria-label="company highlights">
+      <div class="container stats-inner">
+        <h2>以專業支援客戶，為每個工作場所創造更安全的未來</h2>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-icon">🏢</div>
+            <strong class="stat-number">100+</strong>
+            <div class="stat-label">服務企業及項目</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon">✅</div>
+            <strong class="stat-number">300+</strong>
+            <div class="stat-label">安全檢查及審查</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon">📈</div>
+            <strong class="stat-number">98%</strong>
+            <div class="stat-label">客戶滿意度</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon">🎯</div>
+            <strong class="stat-number">0</strong>
+            <div class="stat-label">重大事故目標</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="why" class="section">
+      <div class="container why-wrap">
+        <div class="why-text">
+          <div class="side-line"></div>
+          <h2>為何選擇我們</h2>
+          <p>
+            我們不只提供文件及報告，更重視現場實際情況、施工流程及企業管理需要，
+            以務實方式協助客戶改善安全表現。
+          </p>
+          <div class="why-list">
+            <div class="why-item">
+              <div class="tick">✓</div>
+              <div>
+                <h3>專業團隊</h3>
+                <p>具備工程安全、風險管理及現場審查經驗，提供切合實況的安全建議。</p>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="tick">✓</div>
+              <div>
+                <h3>合規可靠</h3>
+                <p>協助客戶理解及符合相關安全法規、合約要求及行業標準。</p>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="tick">✓</div>
+              <div>
+                <h3>度身訂造</h3>
+                <p>按不同行業、工程階段及風險特性，制定合適安全管理方案。</p>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="tick">✓</div>
+              <div>
+                <h3>持續支援</h3>
+                <p>由前期評估、日常巡查，到事故預防及跟進改善，提供持續支援。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="image-card">
+          <div class="quote-box">
+            <h3>需要安全顧問支援？</h3>
+            <p>歡迎查詢工程項目、辦公室、工場及安全用品批發服務。</p>
+            <a class="btn btn-primary" href="#contact">立即聯絡我們 →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="industries" class="section industries">
+      <div class="container">
+        <div class="section-title">
+          <span class="ghost">INDUSTRIES</span>
+          <h2>適用行業及場所</h2>
+          <p>安全管理並不限於地盤，我們可因應不同工作環境提供安全審查及改善方案。</p>
+        </div>
+        <div class="industry-grid">
+          <div class="industry-card"><span>🏗️</span>建築工程</div>
+          <div class="industry-card"><span>🏭</span>工場及倉庫</div>
+          <div class="industry-card"><span>🏢</span>辦公室及商場</div>
+          <div class="industry-card"><span>🚧</span>道路及維修工程</div>
+          <div class="industry-card"><span>🛡️</span>承建商安全支援</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="container contact-card">
         <div>
-          <div class="section-label">Contact Us</div>
-          <h2>歡迎查詢及合作</h2>
-          <p class="section-intro">如需了解更多安全顧問服務、預約安全評估，或查詢安全用品批發，歡迎隨時與我們聯絡。</p>
+          <div class="eyebrow">CONTACT US</div>
+          <h2>查詢安全顧問服務或安全用品批發</h2>
+          <p>
+            如需安全顧問、稽核審核、風險評估、工作環境審查、意外調查或安全用品批發服務，
+            歡迎留下資料，我們會盡快回覆。
+          </p>
+          <a class="btn btn-primary" href="mailto:info@omnisafety.com.hk">電郵查詢 →</a>
+
+          <div class="contact-info">
+            <div><strong>☎</strong><span>+852 1234 5678</span></div>
+            <div><strong>✉</strong><span>info@omnisafety.com.hk</span></div>
+            <div><strong>⌂</strong><span>香港｜可按項目需要提供現場支援</span></div>
+            <div><strong>◷</strong><span>星期一至星期五 09:00 - 18:00</span></div>
+          </div>
         </div>
-        <div class="contact-info">
-          <div class="contact-item"><span>公司名稱</span><strong>安全萬事屋有限公司<br>Omni Safety Limited</strong></div>
-          <div class="contact-item"><span>電話 / WhatsApp</span><strong>+852 6488 4604</strong></div>
-          <div class="contact-item"><span>電郵</span><strong>info@omnisafety.com</strong></div>
-          <div class="contact-item"><span>服務地區</span><strong>香港</strong></div>
-        </div>
+
+        <form class="form" action="mailto:info@omnisafety.com.hk" method="post" enctype="text/plain">
+          <h3>免費初步諮詢</h3>
+          <div class="form-grid">
+            <input type="text" name="name" placeholder="姓名 / 公司名稱" required />
+            <input type="tel" name="phone" placeholder="聯絡電話 / WhatsApp" />
+            <input type="email" name="email" placeholder="電郵地址" required />
+            <select name="service">
+              <option value="">請選擇服務項目</option>
+              <option>安全顧問服務</option>
+              <option>安全稽核及審核</option>
+              <option>風險評估 / 管理</option>
+              <option>工作環境安全審查</option>
+              <option>意外調查 / 預防意外</option>
+              <option>安全用品批發</option>
+            </select>
+            <textarea name="message" placeholder="請簡單描述你的需要"></textarea>
+            <button class="btn btn-primary" type="submit">提交查詢 →</button>
+          </div>
+        </form>
       </div>
     </section>
   </main>
 
-  <footer>© 2026 安全萬事屋有限公司 Omni Safety Limited. All rights reserved.</footer>
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <div class="logo-mark">安</div>
+            <div>
+              <h3>安全萬事屋有限公司</h3>
+              <small>Omni Safety Limited</small>
+            </div>
+          </div>
+          <p>致力為各行各業提供專業、務實及可靠的安全顧問服務，共同建立更安全的工作環境。</p>
+        </div>
+
+        <div>
+          <h4>服務範圍</h4>
+          <ul>
+            <li>安全顧問服務</li>
+            <li>安全稽核及審核</li>
+            <li>風險評估 / 管理</li>
+            <li>工作環境安全審查</li>
+            <li>意外調查 / 預防意外</li>
+            <li>安全用品批發</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>快速連結</h4>
+          <ul>
+            <li><a href="#home">首頁</a></li>
+            <li><a href="#services">服務範圍</a></li>
+            <li><a href="#why">關於我們</a></li>
+            <li><a href="#industries">行業方案</a></li>
+            <li><a href="#contact">聯絡我們</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>聯絡我們</h4>
+          <ul>
+            <li>+852 1234 5678</li>
+            <li>info@omnisafety.com.hk</li>
+            <li>香港</li>
+            <li>星期一至星期五 09:00 - 18:00</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <span>© 2026 安全萬事屋有限公司 Omni Safety Limited. All Rights Reserved.</span>
+        <span>Privacy Policy ｜ Terms of Use</span>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/85212345678" aria-label="WhatsApp 查詢">☘</a>
 </body>
 </html>
